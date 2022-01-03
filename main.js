@@ -9,7 +9,7 @@ function toggleLight(number, arrayPosition) {
     if(lighton[newArrayPosition])
     {
         console.log(fakkel.getAttribute("position"))
-        fakkel.setAttribute("light", "type: point; color: white; intensity: 1; distance: 2;")
+        fakkel.setAttribute("light", "type: point; color: white; intensity: 5; distance: 2;")
         lighton[newArrayPosition] = false;
     }
     else if (lighton[newArrayPosition] == false) {

@@ -13,7 +13,8 @@
     <a-scene fog="type: linear; color:  #121212 ; far: 30; near: 0">
         <a-assets>
             <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
-            <a-asset-item id="fakkel" src="glb_models/fakkel.glb" scale="0.1 0.1 0.1"></a-asset-item>
+            <a-asset-item id="fakkel" src="glb_models/fakkel.glb" scale="0.1 0.1 0.1"></a-asset-item
+            <a-asset-item id="cig" src="glb_models/cigarette.glb"></a-asset-item>
         </a-assets>
 
         <a-camera id="js--camera">
@@ -33,9 +34,9 @@
         </a-camera>
 
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
-        
+        <a-entity gltf-model="glb_models/cigarette.glb" position="0 1 -4"></a-entity>
         <a-entity gltf-model="#fakkel" class="x fakkel"  position="-1 1.5 -3" shader="flat" onmouseleave="toggleLight(1,1)">
-        <a-entity id="fakkel1" light="type: point; color: white; intensity: 1; distance: 3;" position="1 0 0"></a-entity>
+        <a-entity id="fakkel1" light="type: point; color: white; intensity: 5; distance: 3;" position="1 0 0"></a-entity>
 
     </a-scene>
 
