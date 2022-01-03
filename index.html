@@ -9,9 +9,9 @@
 </head>
 <body>
     <a-scene>
-        <!-- <a-assets>
-            <a-asset-item id="tunnel" src="glb_model/maze.glb"></a-asset-item>
-        </a-assets> -->
+        <a-assets>
+            <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
+        </a-assets>
 
         <a-camera id="js--camera">
             <a-cursor id="js--cursor">
@@ -29,9 +29,7 @@
             </a-cursor>
         </a-camera>
 
-        <a-entity gltf-model="src: glb_model/maze.glb" position="0 0 0"></a-entity>
-        <a-plane position="0 0 0" width="20" height="20" rotation="-90 0 0" color="grey"></a-plane>
-        <a-sky color="skyblue"></a-sky>
+        <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
         
 
     </a-scene>
