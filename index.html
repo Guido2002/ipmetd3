@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-area-light-component/dist/aframe-area-light-component.min.js"></script>
+    <script src="main.js"></script>
     <title>Bunker Festival</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         </a-assets>
 
         <a-camera id="js--camera">
-            <a-cursor id="js--cursor">
+            <a-cursor id="js--cursor" color="red">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -24,16 +24,23 @@
                     cursor="fuse: true; fuseTimeout: 500"
                     position="0 0 0"
                     geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.02"
-                    material="color: yellow; shader: flat"
-                    raycaster="far: 20; interval: 1000; objects: .js--walk"
+                    material="color: red; shader: flat"
+                    raycaster="far: 20; interval: 1000; objects: .x"
                 >
                 </a-entity>
             </a-cursor>
         </a-camera>
 
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
-        <a-entity gltf-model="#fakkel" position="-1 1.5 -3"></a-entity>
         
+        <a-entity gltf-model="#fakkel" class="x fakkel"  position="-1 1.5 -3" shader="flat" onclick="toggleLight(1,1)">
+        <a-entity id="fakkel1" light="type: point; color: white; intensity: 1; distance: 2;" position="1 0 0"></a-entity>
+
+        <a-entity gltf-model="#fakkel" class="x fakkel"  position="-6 0 -1" shader="flat" onclick="toggleLight(2,2)">
+        <a-entity id="fakkel2" light="type: point; color: white; intensity: 1; distance: 2;" position="-1 -1 0"></a-entity>
+
+
+        <a-entity light="type: ambient; color: white"></a-entity>
 
     </a-scene>
 
