@@ -13,7 +13,7 @@ function toggleLight(number, arrayPosition) {
         lighton[newArrayPosition] = false;
     }
     else if (lighton[newArrayPosition] == false) {
-        fakkel.setAttribute("light","type: point; color: white; intensity: 0; distance: 2;")
+        fakkel.setAttribute("light","type: point; color: white; intensity: 0.2; distance: 2;")
         lighton[newArrayPosition] = true;
     }
 }
