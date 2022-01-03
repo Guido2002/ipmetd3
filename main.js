@@ -1,4 +1,4 @@
-lighton = [true,true];
+lighton = [true,true,true];
 
 function toggleLight(number, arrayPosition) {
     console.log("asdjas")
@@ -8,7 +8,7 @@ function toggleLight(number, arrayPosition) {
 
     if(lighton[newArrayPosition])
     {
-        console.log("asasdasdasdasdaddjas")
+        console.log(fakkel.getAttribute("position"))
         fakkel.setAttribute("light", "type: point; color: white; intensity: 1; distance: 2;")
         lighton[newArrayPosition] = false;
     }
