@@ -13,7 +13,9 @@
 <body>
     <a-scene fog="type: linear; color:  #121212 ; far: 30; near: 0">
         <a-assets>
-            <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
+            <a-asset-item id="tunnel" src="glb_models/maze.gltf"></a-asset-item>
+            <!-- <a-asset-item id="maze-obj" src="glb_models/maze.obj"></a-asset-item>
+            <a-asset-item id="maze-stl" src="glb_models/maze.stl"></a-asset-item> -->
             <a-asset-item id="fakkel" src="glb_models/fakkel.glb"></a-asset-item>
             <a-asset-item id="cig" src="glb_models/cig.glb"></a-asset-item>
             <a-asset-item id="asbak" src="glb_models/asbak.glb"></a-asset-item>
@@ -44,6 +46,7 @@
         <a-plane src="#poster" position="-1.5 1.5 -1.99" width="0.5" height="1"></a-plane>
         <a-plane src="#poster2" position="1.5 1.5 -1.99" width="0.5" height="1"></a-plane>
 
+        <a-object-model src="#maze-obj" stl="#maze-stl" position="0 0 0"></a-object-model>
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
 
         <a-entity gltf-model="#fakkel" class="x fakkels"  position="-1 1.5 -3" shader="flat" onmouseleave="toggleLight(1,1)">
