@@ -23,7 +23,7 @@
             <img id="poster2" src="textures/poster2.jpg">
         </a-assets>
 
-        <a-camera id="js--camera">
+        <a-camera id="js--camera" position="-15 1.5 15">
             <a-cursor id="js--cursor" color="red">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
@@ -45,6 +45,23 @@
         <a-plane src="#poster2" position="1.5 1.5 -1.99" width="0.5" height="1"></a-plane>
 
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
+        <a-entity gltf-model="#tafel" position="10 0 15"></a-entity>
+        <a-entity gltf-model="#cig" position="10 1 15" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="10 1 14.96" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="10 1 14.98" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="10 1 14.94" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="10 1 14.92" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="10 1 14.90" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#asbak" position="9.8 1 15.3"></a-entity>
+
+        <a-entity gltf-model="#tafel" position="-18 0 11"></a-entity>
+        <a-entity gltf-model="#cig" position="-18 1 11" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="-18 1 10.96" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="-18 1 10.98" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="-18 1 10.94" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="-18 1 10.92" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#cig" position="-18 1 10.9" rotation="0 0 90"></a-entity>
+        <a-entity gltf-model="#asbak" position="-18.2 1 11.3"></a-entity>
 
         <a-entity gltf-model="#fakkel" class="x fakkels"  position="-1 1.5 -3" shader="flat" onmouseleave="toggleLight(1,1)">
         <a-entity id="fakkel1" light="type: point; color: white; intensity: 1; distance: 3;" position="1 0 0"></a-entity>
