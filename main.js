@@ -18,4 +18,20 @@ function toggleLight(number, arrayPosition) {
     }
 }
 
+function setDrugEffect () {
+     const drug = document.getElementsByClassName("drug")
+     const drug_physiqal = document.getElementsByClassName("drug-object")
+     const vid1 = document.getElementById("video1");
+
+     for (let i = 0; i < drug.length; i++) {
+         for (let j = 0; j < drug_physiqal.length; j++) {
+            const drug_location = drug_physiqal[j];
+            const drugs = drug[i];
+            vid1.currentTime = 0;
+            drugs.setAttribute("sound", "src: url(/audio/drug_video1.wav); autoplay: true; loop: true;")
+            drug_location.setAttribute("position", "100 100 100");
+         }
+     }
+}
+
 

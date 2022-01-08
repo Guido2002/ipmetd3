@@ -19,11 +19,12 @@
             <a-asset-item id="asbak" src="glb_models/asbak.glb"></a-asset-item>
             <a-asset-item id="pil" src="glb_models/pil.glb"></a-asset-item>
             <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
+            <video id="video1" autoplay loop="true" src="video/test.mp4"></video>
             <img id="poster" src="textures/poster.jpg">
             <img id="poster2" src="textures/poster2.jpg">
         </a-assets>
 
-        <a-camera id="js--camera" position="10 1.5 15">
+        <a-camera id="js--camera" position="10 1.5 16.5">
             <a-cursor id="js--cursor" color="red">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
@@ -53,7 +54,11 @@
         <a-entity gltf-model="#cig" position="10 1 14.92" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#cig" position="10 1 14.90" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#asbak" position="9.8 1 15.3"></a-entity>
-        <a-entity gltf-model="#pil" position="10 1 15.5"></a-entity>
+        <a-entity gltf-model="#pil" class="drug-object" position="10 1 15.5"  onclick="setDrugEffect()"></a-entity>
+
+        <a-video src="#video1" id="vid1" width= "6" height="3" position="12 2 21.9" rotation="0 180 0">
+            <a-entity class="drug" sound="src: url(/audio/normal_video1.wav); autoplay: true; loop: true"></a-entity>
+        </a-video>
 
         <a-entity gltf-model="#tafel" position="-18 0 11"></a-entity>
         <a-entity gltf-model="#cig" position="-18 1 11" rotation="0 0 90"></a-entity>
