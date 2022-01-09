@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-area-light-component/dist/aframe-area-light-component.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cig.js"></script>
     <script src="/js/door.js"></script>
@@ -64,7 +65,7 @@
             <a-entity class="drug" sound="src: url(/audio/normal_video1.wav); autoplay: true; loop: true"></a-entity>
             <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
             <a-entity  position="1 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
-            <a-entity  position="-1 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
+            <a-entity  position="-1 1.9 0.5"   rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
         </a-video>
 
         <a-plane  class="x stage-object" position="12 0.2 18" color=red rotation="270 180 0"></a-plane>
@@ -120,7 +121,7 @@
 
         //FAKKELS
 
-        <a-entity door gltf-model="#door1" class="x" position="0 0 -2"  rotation="0 180 0" animation-mixer="timeScale: 0"></a-entity>
+        <a-entity door gltf-model="#door1" class="x" position="0 0 -2"  rotation="0 180 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
 
     </a-scene>
 
