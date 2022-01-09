@@ -7,6 +7,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-area-light-component/dist/aframe-area-light-component.min.js"></script> 
     <script src="/js/main.js"></script>
     <script src="/js/cig.js"></script>
     <script src="/js/teleport.js"></script>
@@ -26,7 +27,7 @@
             <img id="poster2" src="textures/poster2.jpg">
         </a-assets>
 
-        <a-camera id="js--camera" position="0 1.5 0">
+        <a-camera id="js--camera" position="11 1.5 16">
             <a-cursor id="js--cursor" color="red">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
@@ -60,9 +61,12 @@
 
         <a-video src="#video1" vid="vid1" width= "6" height="3" position="12 2 21.9" rotation="0 180 0">
             <a-entity class="drug" sound="src: url(/audio/normal_video1.wav); autoplay: true; loop: true"></a-entity>
+            <a-entity  position="2 1.9 2"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
+            <a-entity  position="3 1.9 2"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
+            <a-entity  position="0 1.9 2"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
         </a-video>
 
-        <a-entity environment="fog: 1;" position="0 10 0"></a-entity>
+        <a-entity id="fog" environment="fog: 0;" position="0 10 0"></a-entity>
 
 
 

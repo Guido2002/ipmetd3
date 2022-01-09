@@ -5,10 +5,12 @@ AFRAME.registerComponent('cig', {
         var el = this.el;
 
         var audio = new Audio("../audio/cigsoundeffect.wav");
+        const fog = document.getElementById("fog")
         audio.volume = 0.8;
         this.playAudio = function(){
             audio.play();
             el.setAttribute("position", "100 100 100");
+            fog.setAttribute("environment", "fog: 1;")
         }
         el.addEventListener("click", this.playAudio);
     },
