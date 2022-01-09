@@ -8,6 +8,7 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-area-light-component/dist/aframe-area-light-component.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cig.js"></script>
     <script src="/js/teleport.js"></script>
@@ -22,12 +23,13 @@
             <a-asset-item id="asbak" src="glb_models/asbak.glb"></a-asset-item>
             <a-asset-item id="pil" src="glb_models/pil.glb"></a-asset-item>
             <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
+            <a-asset-item id="door1" src="glb_models/door1.glb"></a-asset-item>
             <video id="video1" autoplay loop="true" src="video/test.mp4"></video>
             <img id="poster" src="textures/poster.jpg">
             <img id="poster2" src="textures/poster2.jpg">
         </a-assets>
 
-        <a-camera id="js--camera" position="11 1.5 16">
+        <a-camera id="js--camera" position="0 1.5 0">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -86,6 +88,8 @@
 
         <a-entity gltf-model="#fakkel" class="x fakkels"  position="0 0 -8"  shader="flat" onmouseleave="toggleLight(3,3)"></a-entity>
         <a-entity id="fakkel3" light="type: point; color: white; intensity: 1; distance: 3;" position="1 0 -8"></a-entity>
+
+        <a-entity gltf-model="#door1" position="1 -1.5 1"  rotation="0 180 0" animation-mixer></a-entity>
 
     </a-scene>
 
