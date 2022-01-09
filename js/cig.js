@@ -9,7 +9,6 @@ AFRAME.registerComponent('cig', {
         audio.volume = 0.8;
         this.playAudio = function(){
             audio.play();
-            el.setAttribute("position", "100 100 100");
             fog.setAttribute("environment", "fog: 1;")
         }
         el.addEventListener("click", this.playAudio);
