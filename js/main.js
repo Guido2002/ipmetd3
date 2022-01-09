@@ -1,7 +1,6 @@
 lighton = [true,true,true];
 
 function toggleLight(number, arrayPosition) {
-    console.log("asdjas")
     newArrayPosition = arrayPosition - 1;
     
     const fakkel = document.getElementById("fakkel"+ number);

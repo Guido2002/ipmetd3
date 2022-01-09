@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cig.js"></script>
+    <script src="/js/door.js"></script>
     <script src="/js/teleport.js"></script>
     <title>Bunker Festival</title>
 </head>
@@ -38,7 +39,7 @@
                     material = "color: black; shader: flat"
                     geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
                     position = "0 0 -0.5"
-                    raycaster="far: 20; interval: 1000; objects: .x"
+                    raycaster="far: 20; interval: 1000; objects: .x, .door"
                 >
                 </a-entity>
             <a-entity light="type: ambient; color: rgb(255, 153, 51); intensity: 0.5"></a-entity>
@@ -89,7 +90,7 @@
         <a-entity gltf-model="#fakkel" class="x fakkels"  position="0 0 -8"  shader="flat" onmouseleave="toggleLight(3,3)"></a-entity>
         <a-entity id="fakkel3" light="type: point; color: white; intensity: 1; distance: 3;" position="1 0 -8"></a-entity>
 
-        <a-entity gltf-model="#door1" position="1 -1.5 1"  rotation="0 180 0" animation-mixer></a-entity>
+        <a-entity door gltf-model="#door1" class="x" position="1 -1.5 1"  rotation="0 180 0" animation-mixer="timeScale: 0"></a-entity>
 
     </a-scene>
 
