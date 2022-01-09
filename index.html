@@ -14,6 +14,7 @@
     <script src="/js/cig.js"></script>
     <script src="/js/door.js"></script>
     <script src="/js/teleport.js"></script>
+    <script src="/js/distanceCalculator.js"></script>
     <title>Bunker Festival</title>
 </head>
 <body>
@@ -27,6 +28,7 @@
             <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
             <a-asset-item id="door1" src="glb_models/door1.glb"></a-asset-item>
             <video id="video1" autoplay loop="true" src="video/test.mp4"></video>
+            <video id="video2" autoplay loop="true" src="video/test_2.mp4"></video>
             <img id="poster" src="textures/poster.jpg">
             <img id="poster2" src="textures/poster2.jpg">
         </a-assets>
@@ -59,16 +61,17 @@
         <a-entity gltf-model="#cig" class="x js--pickup" cig position="10 1 14.92" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#cig" class="x js--pickup" cig position="10 1 14.90" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#asbak" position="9.8 1 15.3"></a-entity>
-        <a-entity gltf-model="#pil" class="x drug-object" position="10 1 15.5"  onclick="setDrugEffect()"></a-entity>
+        <a-entity gltf-model="#pil" class="x drug-object" position="10 1 15.5"  onclick="setDrugEffect('drug_video1.wav','1')"></a-entity>
+        
+        <a-plane  class="x stage-object" id="so1" position="12 0.2 18" color=red rotation="270 180 0"></a-plane>
 
-        <a-video src="#video1" vid="vid1" width= "6" height="3" position="12 2 21.9" rotation="0 180 0">
+        <a-video src="#video1" id="vid1" width= "6" height="3" position="12 2 21.9" rotation="0 180 0">
             <a-entity class="drug" sound="src: url(/audio/normal_video1.wav); autoplay: true; loop: true"></a-entity>
             <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
             <a-entity  position="1 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
             <a-entity  position="-1 1.9 0.5"   rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
         </a-video>
 
-        <a-plane  class="x stage-object" position="12 0.2 18" color=red rotation="270 180 0"></a-plane>
         <a-entity gltf-model="#tafel" class="x fakkel_1"  position="-18 0 11"></a-entity>
         <a-entity gltf-model="#cig" class="x js--pickup" cig position="-18 1 11" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#cig" class="x js--pickup" cig position="-18 1 10.96" rotation="0 0 90"></a-entity>
@@ -77,7 +80,17 @@
         <a-entity gltf-model="#cig" class="x js--pickup" cig position="-18 1 10.92" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#cig" class="x js--pickup" cig position="-18 1 10.9" rotation="0 0 90"></a-entity>
         <a-entity gltf-model="#asbak" position="-18.2 1 11.3"></a-entity>
-        <a-entity gltf-model="#pil" class="x" position="-18.4 1 11.6"></a-entity>
+        <a-entity gltf-model="#pil" class="x drug-object" position="-18.4 1 11.6" onclick="setDrugEffect('drug_video2.wav','2')"></a-entity>
+
+        <a-video src="#video2" id="vid2" width= "6" height="3" position="-16 2 17.9" rotation="0 180 0">
+            <a-entity class="drug" sound="src: url(/audio/normal_video2.wav); autoplay: true; loop: true"></a-entity>
+            <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
+            <a-entity  position="1 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
+            <a-entity  position="-1 1.9 0.5"   rotation="270 180 0" area-light="intensity:30; width:2; height:0.1; color: red;"></a-entity>
+        </a-video>
+
+        <a-plane  class="x stage-object" id="so2"  position="-16 0.2 14" color=red rotation="270 180 0"></a-plane>
+
 
         //FAKKELS
         <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="-1 1.5 -4"  shader="flat" onmouseleave="toggleLight(2,2)"></a-entity>
