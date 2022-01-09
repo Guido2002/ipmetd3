@@ -1,10 +1,14 @@
 AFRAME.registerComponent('door', {
     init: function () {
         var el = this.el;
-        this.open = function() {
-            el.setAttribute("animation-mixer", "timeScale: 1; clampWhenFinished: true; loop: once")
+        this.toggleDoor = function() {
+                el.setAttribute("animation-mixer", "timeScale: 1")
+                setTimeout(stopDoor, 3000)
         }
-        el.addEventListener("click", this.open)
+        stopDoor = function() {
+            el.setAttribute("animation-mixer", "timeScale: 0")
+        }
+        el.addEventListener("click", this.toggleDoor)
 
     },
     update: function () {},
