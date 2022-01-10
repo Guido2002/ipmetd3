@@ -17,20 +17,23 @@ function toggleLight(number, arrayPosition) {
     }
 }
 
-function setDrugEffect (srcDrugEffect, numVid) {
-     const drug = document.getElementsByClassName("drug")
-     const drug_physiqal = document.getElementsByClassName("drug-object")
-     const vid = document.getElementById("video" + numVid);
+function setDrugEffect() {
+     const drug1 = document.getElementById("drug1")
+     const drug2 = document.getElementById("drug2")
 
-     for (let i = 0; i < drug.length; i++) {
-         for (let j = 0; j < drug_physiqal.length; j++) {
-            const drug_location = drug_physiqal[j];
-            const drugs = drug[i];
-            vid.currentTime = 0;
-            drug[i].setAttribute("sound", "src: url(/audio/"+ srcDrugEffect +"); autoplay: true; loop: true;")
-            drug_physiqal[j].setAttribute("position", "100 100 100");
-         }
-     }
+     const drug_physiqal = document.getElementsByClassName("drug-object")
+     const vid1 = document.getElementById("video1");
+     const vid2 = document.getElementById("video2");
+     
+    for (let j = 0; j < drug_physiqal.length; j++) {
+        const drug_location = drug_physiqal[j];
+        vid1.currentTime = 0;
+        vid2.currentTime = 0;
+        drug1.setAttribute("sound", "src: url(/audio/drug_video1.wav); autoplay: true; loop: true;")
+        drug2.setAttribute("sound", "src: url(/audio/drug_video2.wav); autoplay: true; loop: true;")
+        drug_location.setAttribute("position", "100 100 100");
+    }
 }
+
 
 
