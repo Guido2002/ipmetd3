@@ -37,20 +37,27 @@ function setDrugEffect() {
     }
 }
 
-function setMuted (currentVid, anotherVid) {
+function setMuted (currentVid, anotherVid, anotherVid2, anotherVid3) {
     currentVideo = document.getElementById("drug" + currentVid);
     anotherVideo = document.getElementById("drug" + anotherVid);
+    anotherVideo2 = document.getElementById("drug" + anotherVid2);
+    anotherVideo3 = document.getElementById("drug" + anotherVid3);
 
     currentVideo.setAttribute("sound", "volume: 1;")
     anotherVideo.setAttribute("sound", "volume: 0;")
-    console.log(anotherVideo.volume)
+    anotherVideo2.setAttribute("sound", "volume: 0;")
+    anotherVideo3.setAttribute("sound", "volume: 0;")
 }
 
-function setVolumeNormal (currentVid, anotherVid)  {
+function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
     currentVideo = document.getElementById("drug" + currentVid);
     anotherVideo = document.getElementById("drug" + anotherVid);
+    anotherVideo2 = document.getElementById("drug" + anotherVid2);
+    anotherVideo3 = document.getElementById("drug" + anotherVid3);
 
     currentVideo.setAttribute("sound", "volume: 1;")
     anotherVideo.setAttribute("sound", "volume: 1;")
+    anotherVideo2.setAttribute("sound", "volume: 1;")
+    anotherVideo3.setAttribute("sound", "volume: 1;")
 }
 
