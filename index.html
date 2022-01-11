@@ -14,10 +14,11 @@
     <script src="/js/cig.js"></script>
     <script src="/js/door.js"></script>
     <script src="/js/teleport.js"></script>
+    <!-- <script src="/js/distanceCalculator.js"></script> -->
     <title>Bunker Festival</title>
 </head>
 <body>
-    <a-scene fog="type: linear; color:  #121212 ; far: 30; near: 0">
+    <a-scene stats fog="type: linear; color:  #121212 ; far: 30; near: 0">
         <a-assets>
             <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
             <a-asset-item id="fakkel" src="glb_models/fakkel.glb"></a-asset-item>
@@ -37,7 +38,7 @@
             <audio src="/audio/normal_video2.wav" id="normal2" preload=auto></audio>
         </a-assets>
 
-        <a-camera id="js--camera" position="0 1.5 0">
+        <a-camera id="js--camera" distance position="0 1.5 0">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 300; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -46,7 +47,7 @@
                     material = "color: black; shader: flat"
                     geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
                     position = "0 0 -0.5"
-                    raycaster="far: 20; interval: 300; objects: .x, .door"
+                    raycaster="far: 5; interval: 300; objects: .x, .door"
                 >
                 </a-entity>
             <a-entity light="type: ambient; intensity: 0.2"></a-entity>
