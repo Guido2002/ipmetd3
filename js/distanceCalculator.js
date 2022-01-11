@@ -1,7 +1,7 @@
-AFRAME.registerComponent("distanceCalculator", {
+AFRAME.registerComponent("distance", {
     init: function() {
-      this.vid1 = document.getElementById("vid1")
-      this.vid2 = document.getElementById("vid2")
+      this.vid1 = document.getElementById("drug1")
+      this.vid2 = document.getElementById("drug2")
     },
     tick: function() {
       let cameraPos = this.el.object3D.position
@@ -10,8 +10,8 @@ AFRAME.registerComponent("distanceCalculator", {
       let distanceVidPos1 = cameraPos.distanceTo(vid1Pos)
       let distanceVidPos2 = cameraPos.distanceTo(vid2Pos)
 
-    console.log(distanceVidPos1)
-    console.log(distanceVidPos2)
+      console.log(distanceVidPos1)
+      console.log(distanceVidPos2)
 
     }
   })
