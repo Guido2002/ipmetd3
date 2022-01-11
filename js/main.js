@@ -37,6 +37,21 @@ function setDrugEffect() {
     }
 }
 
+function playVideo_Audio(num1, num2, num3, num4) {
+    audio1 = document.getElementById("drug" + num1);
+    audio2 = document.getElementById("drug" + num2);
+    audio3 = document.getElementById("drug" + num3);
+    audio4 = document.getElementById("drug" + num4);
+    
+    audio1.setAttribute("sound", "volume: 1; autoplay: true;")
+    audio2.setAttribute("sound", "volume: 1; autoplay: true;")
+    audio3.setAttribute("sound", "volume: 1; autoplay: true;")
+    audio4.setAttribute("sound", "volume: 1; autoplay: true;")
+
+    console.log("tis gelukt");
+
+}
+
 function setMuted (currentVid, anotherVid, anotherVid2, anotherVid3) {
     currentVideo = document.getElementById("drug" + currentVid);
     anotherVideo = document.getElementById("drug" + anotherVid);
