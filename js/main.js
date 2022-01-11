@@ -37,5 +37,20 @@ function setDrugEffect() {
     }
 }
 
+function setMuted (currentVid, anotherVid) {
+    currentVideo = document.getElementById("drug" + currentVid);
+    anotherVideo = document.getElementById("drug" + anotherVid);
 
+    currentVideo.setAttribute("sound", "volume: 1;")
+    anotherVideo.setAttribute("sound", "volume: 0;")
+    console.log(anotherVideo.volume)
+}
+
+function setVolumeNormal (currentVid, anotherVid)  {
+    currentVideo = document.getElementById("drug" + currentVid);
+    anotherVideo = document.getElementById("drug" + anotherVid);
+
+    currentVideo.setAttribute("sound", "volume: 1;")
+    anotherVideo.setAttribute("sound", "volume: 1;")
+}
 
