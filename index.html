@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -28,10 +29,10 @@
             <a-asset-item id="door2" src="glb_models/door2.glb"></a-asset-item>
             <a-asset-item id="light" src="glb_models/light.glb"></a-asset-item>
             <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
-            <video id="video1" autoplay  loop="true" src="video/test.mp4"></video>
-            <video id="video2" autoplay loop="true" src="video/test_2.mp4"></video>
-            <video id="video3" autoplay loop="true" src="video/test3.mp4"></video>
-            <video id="video4" autoplay loop="true" src="video/test4.mp4"></video>
+            <video id="video1" playsinline webkit-playsinline autoplay  loop="true" src="video/test.mp4"></video>
+            <video id="video2" playsinline webkit-playsinline autoplay loop="true" src="video/test_2.mp4"></video>
+            <video id="video3" playsinline webkit-playsinline autoplay loop="true" src="video/test3.mp4"></video>
+            <video id="video4" playsinline webkit-playsinline autoplay loop="true" src="video/test4.mp4"></video>
             <img id="poster" src="textures/poster.jpg">
             <img id="poster2" src="textures/poster2.jpg">
             <audio src="/audio/drug_video1.wav" preload=auto ></audio>

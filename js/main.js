@@ -38,6 +38,11 @@ function setDrugEffect() {
 }
 
 function playVideo_Audio(num1, num2, num3, num4) {
+    vid1 = document.getElementById("vid" + num1);
+    vid2 = document.getElementById("vid" + num2);
+    vid3 = document.getElementById("vid" + num3);
+    vid4 = document.getElementById("vid" + num4);
+
     audio1 = document.getElementById("drug" + num1);
     audio2 = document.getElementById("drug" + num2);
     audio3 = document.getElementById("drug" + num3);
@@ -48,8 +53,10 @@ function playVideo_Audio(num1, num2, num3, num4) {
     audio3.setAttribute("sound", "volume: 1; autoplay: true;")
     audio4.setAttribute("sound", "volume: 1; autoplay: true;")
 
-    console.log("tis gelukt");
-
+    vid1.components.material.material.map.image.play();
+    vid2.components.material.material.map.image.play();
+    vid3.components.material.material.map.image.play();
+    vid4.components.material.material.map.image.play();
 }
 
 function setMuted (currentVid, anotherVid, anotherVid2, anotherVid3) {
