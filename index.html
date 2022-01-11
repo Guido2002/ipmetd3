@@ -28,6 +28,8 @@
             <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
             <a-asset-item id="door1" src="glb_models/door1.glb"></a-asset-item>
             <a-asset-item id="door2" src="glb_models/door2.glb"></a-asset-item>
+            <a-asset-item id="light" src="glb_models/light.glb"></a-asset-item>
+            <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
             <video id="video1" autoplay loop="true" src="video/test.mp4"></video>
             <video id="video2" autoplay loop="true" src="video/test_2.mp4"></video>
             <img id="poster" src="textures/poster.jpg">
@@ -50,7 +52,7 @@
                     raycaster="far: 5; interval: 300; objects: .x, .door"
                 >
                 </a-entity>
-            <a-entity light="type: ambient; color: rgb(255, 153, 51); intensity: 0.5"></a-entity>
+            <a-entity light="type: ambient; intensity: 0.2"></a-entity>
         </a-camera>
 
         <a-entity light="type: point; color: #BBB; intensity: 0.1"></a-entity>
