@@ -83,3 +83,10 @@ function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
     anotherVideo3.setAttribute("sound", "volume: 1;")
 }
 
+function setVisibleNone() {
+    const test = document.getElementById("door2_t")
+
+    test.parentElement.removeChild(test);
+
+}
+
