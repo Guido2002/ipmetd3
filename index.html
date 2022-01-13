@@ -45,7 +45,7 @@
         </a-assets>
 
         <!-- <a-camera id="js--camera" position="0 1.5 0"> -->
-        <a-camera id="js--camera" position="9 1.5 -23">
+        <a-camera id="js--camera" position="-12 1.5 -16">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 300; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -107,6 +107,10 @@
             <a-entity class="drug" id="drug4" position="0 0 3.5" sound="src: #normal4; loop: true; maxDistance: 1;"></a-entity>
             <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:6; height:0.1; color: blue;"></a-entity>
         </a-video>
+
+        <!-- speakers vid4 -->
+        <a-entity gltf-model="#speaker" position="-8.5 0 -13" scale="0.8 0.8 0.8" rotation="0 175 0"></a-entity>
+        <a-entity gltf-model="#speaker" position="-8.5 0 -19" scale="0.8 0.8 0.8" rotation="0 185 0"></a-entity>
 
         <a-plane  class="x platform" id="so4"  position="-12 0.2 -16" color=red rotation="270 180 0" onclick="setMuted(4,3,2,1)"></a-plane>
 
