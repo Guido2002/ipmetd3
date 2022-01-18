@@ -28,6 +28,10 @@
             <img src="/textures/mk_1980.jpg" id="poster2" alt="poster van dire straits">
             <img src="/textures/mk_1992.jpg" id="poster3" alt="poster van dire straits">
             <img src="/textures/posterwall.png" id="posterwall" alt="postermuur dire straits">
+            <img src="/textures/doorwall_1.png" id="doorwall1" alt="postermuur dire straits">
+            <img src="/textures/doorwall_2.png" id="doorwall2" alt="postermuur dire straits">
+            <img src="/textures/doorwall_3.png" id="doorwall3" alt="postermuur dire straits">
+            <img src="/textures/videowall.png" id="videowall" alt="postermuur dire straits">
             <img src="/textures/strat.png" id="strat" alt="">
             <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/test_2.mp4"></video>
             <audio src="/audio/normal_video2.wav" id="normal2" preload=auto autoplay></audio>
@@ -68,6 +72,12 @@
         <!-- <a-plane src="#album" position="-12.1 2 14" width="2.9" height="3.9"  rotation="0 -90 0"></a-plane> -->
         <a-plane src="#posterwall" position="-12.05 2 14" width="8" height="4" rotation="0 -90 0"></a-plane>
 
+        <a-plane src="#doorwall1" position="-18.5 2 10.01" width="3" height="4" rotation="0 0 0"></a-plane>
+        <a-plane src="#doorwall2" position="-16 3.25 10.01" width="2" height="1.5" rotation="0 0 0"></a-plane>
+        <a-plane src="#doorwall3" position="-13.5 2 10.01" width="3" height="4" rotation="0 0 0"></a-plane>
+
+        <a-plane src="#videowall" position="-16 2 17.99" width="8" height="4" rotation="0 180 0"></a-plane>
+
         <a-plane></a-plane>
 
         <a-image src="#poster2" position="-19.9 2 14" width="2" height="1.5"  rotation="0 90 0">
@@ -77,7 +87,7 @@
             <a-entity scale="4 4 4"  text="value:1992; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
         </a-image>
 
-        <a-plane  class="x platform" id="so4"  position="-16 0.2 14" color=red rotation="270 180 0" onclick="setMuted(2,4,3,2)"></a-plane>
+        <a-plane class="x platform" id="so4"  position="-16 0.2 14" color=white rotation="270 180 0" onclick="setMuted(2,4,3,2)"></a-plane>
     </a-scene>
 
 </body>
