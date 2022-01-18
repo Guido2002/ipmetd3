@@ -23,11 +23,8 @@
             <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
             <a-asset-item id="lights" src="glb_models/lights.glb"></a-asset-item>
             <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
-            <video id="video2" playsinline webkit-playsinline autoplay loop="true" src="video/test_2.mp4"></video>
-            <audio src="/audio/normal_video1.wav" id="normal1" preload=auto></audio>
-            <audio src="/audio/normal_video2.wav" id="normal2" preload=auto></audio>
-            <audio src="/audio/normal_video3.wav" id="normal3" preload=auto></audio>
-            <audio src="/audio/normal_video4.wav" id="normal4" preload=auto></audio>
+            <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/test_2.mp4"></video>
+            <audio src="/audio/normal_video2.wav" id="normal2" preload=auto autoplay></audio>
         </a-assets>
 
         <a-camera id="js--camera" position="-16 1.5 15">
@@ -60,7 +57,7 @@
         <a-entity gltf-model="#lights" position="-16 3.9 17.3" scale="0.5 0.5 0.5" rotation="0 -90 20"></a-entity>
         <a-plane src="#poster" position="-16 1.5 17.3" width="0.5" height="1"></a-plane>
 
-        <a-plane  class="x platform" id="so4"  position="-12 0.2 -16" color=red rotation="270 180 0" onclick="setMuted(4,3,2,1)"></a-plane>
+        <a-plane  class="x platform" id="so4"  position="-16 0.2 14" color=red rotation="270 180 0" onclick="setMuted(2,4,3,2)"></a-plane>
     </a-scene>
 
 </body>
