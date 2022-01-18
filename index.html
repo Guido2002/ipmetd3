@@ -23,11 +23,13 @@
             <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
             <a-asset-item id="lights" src="glb_models/lights.glb"></a-asset-item>
             <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
+            <img src="/textures/album1.jpg" id="album" alt="poster van alle albums van dire straits">
+            <img src="/textures/poster_dire.jpg" id="poster1" alt="poster van dire straits">
             <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/test_2.mp4"></video>
             <audio src="/audio/normal_video2.wav" id="normal2" preload=auto autoplay></audio>
         </a-assets>
 
-        <a-camera id="js--camera" position="-16 1.5 15">
+        <a-camera id="js--camera" position="-16 1.5 16">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 300; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -55,7 +57,8 @@
         <a-entity gltf-model="#speaker" position="-19 0 17.5" scale="0.8 0.8 0.8" rotation="0 85 0"></a-entity>
         <a-entity gltf-model="#speaker" position="-13 0 17.5" scale="0.8 0.8 0.8" rotation="0 95 0"></a-entity>
         <a-entity gltf-model="#lights" position="-16 3.9 17.3" scale="0.5 0.5 0.5" rotation="0 -90 20"></a-entity>
-        <a-plane src="#poster" position="-16 1.5 17.3" width="0.5" height="1"></a-plane>
+        <a-plane src="#poster1" position="-19.9 2 14" width="6" height="3"  rotation="0 90 0"></a-plane>
+        <a-plane src="#album" position="-12.1 2 14" width="2.9" height="3.9"  rotation="0 -90 0"></a-plane>
 
         <a-plane  class="x platform" id="so4"  position="-16 0.2 14" color=red rotation="270 180 0" onclick="setMuted(2,4,3,2)"></a-plane>
     </a-scene>
