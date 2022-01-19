@@ -69,6 +69,9 @@ function setMuted (currentVid, anotherVid, anotherVid2, anotherVid3) {
     anotherVideo.setAttribute("sound", "volume: 0;")
     anotherVideo2.setAttribute("sound", "volume: 0;")
     anotherVideo3.setAttribute("sound", "volume: 0;")
+
+
+
 }
 
 function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
@@ -81,6 +84,8 @@ function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
     anotherVideo.setAttribute("sound", "volume: 1;")
     anotherVideo2.setAttribute("sound", "volume: 1;")
     anotherVideo3.setAttribute("sound", "volume: 1;")
+
+
 }
 
 function setVisibleNone() {
@@ -88,5 +93,18 @@ function setVisibleNone() {
 
     test.parentElement.removeChild(test);
 
+}
+
+function setTitle(number) {
+    title = document.getElementById("title")
+    const api_base_url = "https://api.punkapi.com/v2/"
+    let api_args = "beers/"
+
+    fetch(api_base_url + api_args + number)
+    .then(response => response.json())
+    .then(data => {
+        title.setAttribute("value", "Geniet van uw " + data[0].name)
+        console.log(data[0].name)
+    })
 }
 

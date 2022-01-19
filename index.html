@@ -32,7 +32,8 @@
             <a-asset-item id="door2" src="glb_models/door2.glb"></a-asset-item>
             <a-asset-item id="lights" src="glb_models/lights.glb"></a-asset-item>
             <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
-            <audio src="/audio/deg_bier2.mp3" autoplay loop></audio>
+            <audio src="/audio/deg_bier2.mp3" preload="auto" id="sound1"></audio>
+            <audio src="/audio/vending_sound.mp3" preload="auto" id="sound2"></audio>
             <img id="poster" src="textures/DEG_logo.png">
         </a-assets>
 
@@ -52,27 +53,30 @@
 
         <a-entity gltf-model="#box" position="0 0 0"></a-entity>
         <a-entity door gltf-model="#door1" class="x" id="door2_t" position="0 0 2.9" rotation="0 0 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
-        <a-entity door gltf-model="#machine" position="0 0 -3" rotation="0 0 0" >
+        <a-entity door gltf-model="#machine" sound="src: #2; autoplay: true; loop: true; volume: 0.08;" position="0 0 -3" rotation="0 0 0" >
         </a-entity>
         <a-entity position="1 3 1" light="type: point; intensity:0.5" color="white"></a-entity>
         <a-entity position="-1 3 1" light="type: point; intensity:0.5" color="white"></a-entity>
         <a-entity position="1 3 -1" light="type: point; intensity:0.5" color="white"></a-entity>
         <a-entity position="-1 3 -1" light="type: point; intensity:0.5" color="white"></a-entity>
 
-        <a-text position="-0.52 2 -3" value="DEG BIER"></a-text>
+        <a-text position="-0.52 2 -3"  value="DEG BIER" width="3"></a-text>
+        <a-text position="-0.6 0.2 -2.55" id="title" value="DEG BIER" width="2"></a-text>
 
         <a-plane src="#poster" position="-1.9 2 -2.99" width="1.8" height="1" ></a-plane>
         <a-plane src="#poster" position="1.9 2 -2.99" width="1.8" height="1" ></a-plane>
 
-        <a-plane beer="n:1" position="-0.5 1 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
-        <a-plane beer="n:2" position="-0.3 1 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
-        <a-plane beer="n:3" position="-0.1 1 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
-        <a-plane beer="n:4" position="0.1 1 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
+        <a-plane beer="n:1" position="-0.5 1 -2.57" id="beer1" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click"  onclick="setTitle(1)" ></a-plane>
+        <a-plane beer="n:2" position="-0.3 1 -2.57" id="beer2" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(2)"></a-plane>
+        <a-plane beer="n:3" position="-0.1 1 -2.57" id="beer3" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(3)"></a-plane>
+        <a-plane beer="n:4" position="0.1 1 -2.57" id="beer4" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(4)"></a-plane>
 
-        <a-plane beer="n:5" position="-0.5 0.7 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
-        <a-plane beer="n:6" position="-0.3 0.7 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
-        <a-plane beer="n:7" position="-0.1 0.7 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
-        <a-plane beer="n:8" position="0.1 0.7 -2.57" rotation="0 0 0" width="0.1" height="0.2"></a-plane>
+        <a-plane beer="n:5" position="-0.5 0.7 -2.57" id="beer5" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(5)"></a-plane>
+        <a-plane beer="n:6" position="-0.3 0.7 -2.57" id="beer6" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(6)"></a-plane>
+        <a-plane beer="n:7" position="-0.1 0.7 -2.57" id="beer7" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(7)"></a-plane>
+        <a-plane beer="n:8" position="0.1 0.7 -2.57" id="beer8" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(8)" ></a-plane>
+
+
 
     </a-scene>
 
