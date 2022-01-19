@@ -69,7 +69,14 @@ function setMuted (currentVid, anotherVid, anotherVid2, anotherVid3) {
     anotherVideo.setAttribute("sound", "volume: 0;")
     anotherVideo2.setAttribute("sound", "volume: 0;")
     anotherVideo3.setAttribute("sound", "volume: 0;")
+
+    lightOff()
 }
+
+function lightOff(){
+    document.getElementById("zaklamp").setAttribute("light", "type: point; intensity: 0.1")
+}
+
 
 function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
     currentVideo = document.getElementById("drug" + currentVid);
@@ -81,6 +88,12 @@ function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
     anotherVideo.setAttribute("sound", "volume: 1;")
     anotherVideo2.setAttribute("sound", "volume: 1;")
     anotherVideo3.setAttribute("sound", "volume: 1;")
+
+    lightOn()
+}
+
+function lightOn(){
+    document.getElementById("zaklamp").setAttribute("light", "type: spot; intensity: 0.6")
 }
 
 function setVisibleNone() {
