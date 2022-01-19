@@ -18,18 +18,15 @@ function toggleLight(number, arrayPosition) {
 }
 
 function setDrugEffect() {
-     const drug1 = document.getElementById("drug1")
      const drug2 = document.getElementById("drug2")
 
      const drug_physiqal = document.getElementsByClassName("drug-object")
-     const vid1 = document.getElementById("video1");
      const vid2 = document.getElementById("video2");
 
-     drug1.setAttribute("sound", "src: url(/audio/drug_video1.wav); autoplay: true; loop: true;")
-     drug2.setAttribute("sound", "src: url(/audio/drug_video2.wav); autoplay: true; loop: true;")
+     drug2.setAttribute("sound", "src: url(/audio/drug_video2_louder.wav); autoplay: true; loop: true;")
      
-    vid1.currentTime = 0;
     vid2.currentTime = 0;
+    console.log(drug2)
 
     for (let i = 0; i < drug_physiqal.length; i++) {
         const druglocation = drug_physiqal[i];

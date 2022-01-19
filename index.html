@@ -23,6 +23,8 @@
             <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
             <a-asset-item id="lights" src="glb_models/lights.glb"></a-asset-item>
             <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
+            <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
+            <a-asset-item id="pil" src="glb_models/pil.glb"></a-asset-item>
             <img src="/textures/album1.jpg" id="album" alt="poster van alle albums van dire straits">
             <img src="/textures/poster_dire.jpg" id="poster1" alt="poster van dire straits">
             <img src="/textures/mk_1980.jpg" id="poster2" alt="poster van dire straits">
@@ -34,10 +36,11 @@
             <img src="/textures/videowall.png" id="videowall" alt="postermuur dire straits">
             <img src="/textures/strat.png" id="strat" alt="">
             <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/test_2.mp4"></video>
-            <audio src="/audio/normal_video2.wav" id="normal2" preload=auto autoplay></audio>
+            <audio src="/audio/normal_video2.wav" id="normal2" preload=auto ></audio>
+            <audio src="/audio/drug_video2.wav" id="drug3" preload=auto></audio>
         </a-assets>
 
-        <a-camera id="js--camera" position="-16 1.5 16">
+        <a-camera id="js--camera" position="-16 1.5 14">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 300; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -57,7 +60,12 @@
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
 
         <a-video src="#video2" id="vid2" width= "6" height="3" position="-16 2 17.9" rotation="0 180 0">
-            <a-entity class="drug" id="drug2" position="0 0 3.5" sound="src: #normal2; loop: true; maxDistance: 1;"></a-entity>
+            <a-entity id="drug2" position="0 0 3.5" sound="src: #normal2; loop: true; autoplay:true; maxDistance: 1;"></a-entity>
+            <a-entity gltf-model="#tafel" position="0.6 -2 2.5">
+                <a-entity gltf-model="#pil" position="-0.7 1 0.2" class="x drug-object" onclick="setDrugEffect()">
+                
+                </a-entity>
+            </a-entity>
             <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:6; height:0.1; color: green;"></a-entity>
         </a-video>
 
@@ -78,8 +86,6 @@
 
         <a-plane src="#videowall" position="-16 2 17.99" width="8" height="4" rotation="0 180 0"></a-plane>
 
-        <a-plane></a-plane>
-
         <a-image src="#poster2" position="-19.9 2 14" width="2" height="1.5"  rotation="0 90 0">
             <a-entity scale="4 4 4" text="value:1982; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
         </a-image>
@@ -87,7 +93,9 @@
             <a-entity scale="4 4 4"  text="value:1992; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
         </a-image>
 
-        <a-plane class="x platform" id="so4"  position="-16 0.2 14" color=white rotation="270 180 0" onclick="setMuted(2,4,3,2)"></a-plane>
+        <a-plane class="x platform" id="so4"  position="-18 0.2 13" color=red rotation="270 180 0" ></a-plane>
+        <a-plane class="x platform" id="so5"  position="-16 0.2 14" color=red rotation="270 180 0" ></a-plane>
+        <a-plane class="x platform" id="so6"  position="-14 0.2 13" color=red rotation="270 180 0" ></a-plane>
     </a-scene>
 
 </body>
