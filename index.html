@@ -34,6 +34,13 @@
             <audio src="/audio/deg_bier2.mp3" preload="auto" id="sound1"></audio>
             <audio src="/audio/vending_sound.mp3" preload="auto" id="sound2"></audio>
             <img id="poster" src="textures/DEG_logo.png">
+            <img id="posterwall_1" src="textures/cafeposter_1.png">
+            <img id="concretewall" src="textures/concrete.png">
+            <img id="tapijt" src="textures/tapijt.jpg">
+            <img id="concretedoor_1" src="textures/concretedoor_1.png">
+            <img id="concretedoor_2" src="textures/concretedoor_2.png">
+            <img id="concretedoor_3" src="textures/concretedoor_3.png">
+            
         </a-assets>
 
         <a-camera id="js--camera" position="0 1.5 0">
@@ -62,8 +69,8 @@
         <a-text position="-0.52 2 -3"  value="DEG BIER" width="3"></a-text>
         <a-text position="-0.6 0.2 -2.55" id="title" value="DEG BIER" width="2"></a-text>
 
-        <a-plane src="#poster" position="-1.9 2 -2.99" width="1.8" height="1" ></a-plane>
-        <a-plane src="#poster" position="1.9 2 -2.99" width="1.8" height="1" ></a-plane>
+        <a-plane src="#poster" position="-1.9 2 -2.9" width="1.8" height="1" ></a-plane>
+        <a-plane src="#poster" position="1.9 2 -2.9" width="1.8" height="1" ></a-plane>
 
         <a-plane beer="n:1" position="-0.5 1 -2.57" id="beer1" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click"  onclick="setTitle(1)" ></a-plane>
         <a-plane beer="n:2" position="-0.3 1 -2.57" id="beer2" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(2)"></a-plane>
@@ -74,6 +81,26 @@
         <a-plane beer="n:6" position="-0.3 0.7 -2.57" id="beer6" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(6)"></a-plane>
         <a-plane beer="n:7" position="-0.1 0.7 -2.57" id="beer7" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(7)"></a-plane>
         <a-plane beer="n:8" position="0.1 0.7 -2.57" id="beer8" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(8)" ></a-plane>
+
+        <a-plane src="#concretewall" position="0 1.5 -2.99" width="6" height="3"></a-plane>
+
+        <a-plane src="#concretedoor_1" position="2 1.5 2.99" width="2" height="3" rotation="0 180 0"></a-plane>
+        <a-plane src="#concretedoor_2" position="0 2.75 2.99" width="2" height="0.5" rotation="0 180 0"></a-plane>
+        <a-plane src="#concretedoor_3" position="-2 1.5 2.99" width="2" height="3" rotation="0 180 0"></a-plane>
+
+        <a-plane src="#posterwall_1" position="2.99 1.5 0" width="6" height="3" rotation="0 -90 0" ></a-plane>
+        <a-entity gltf-model="#tafel" position="2.5 -0.2 -1.2" rotation="0 0 0" scale="0.5 1 0.9"></a-entity>
+        <a-entity gltf-model="#tafel" position="2.5 -0.2 1.2" rotation="0 0 0" scale="0.5 1 0.9"></a-entity>
+
+
+        <a-plane src="#posterwall_1" position="-2.99 1.5 0" width="6" height="3" rotation="0 90 0" ></a-plane>
+        <a-entity gltf-model="#tafel" position="-2 -0.2 -1.2" rotation="0 0 0" scale="0.5 1 0.9"></a-entity>
+        <a-entity gltf-model="#tafel" position="-2 -0.2 1.2" rotation="0 0 0" scale="0.5 1 0.9"></a-entity>
+
+        <a-plane src="#tapijt" position="1 0.01 0" width="2.2" height="2.8" rotation="-90 0 20" ></a-plane>
+        <a-plane src="#tapijt" position="-1.2 0.02 1" width="2.2" height="2.8" rotation="-90 0 -10" ></a-plane>
+
+
     </a-scene>
 
 </body>
