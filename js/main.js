@@ -106,5 +106,15 @@ function setTitle(number) {
         title.setAttribute("value", "Geniet van uw " + data[0].name)
         console.log(data[0].name)
     })
+    console.log(document.getElementById("hendel"))
+    startHendel()
 }
 
+function startHendel(){
+    document.getElementById("hendel").setAttribute("animation-mixer", "timeScale:1")
+    setTimeout(stopHendel, 2000)
+}
+
+function stopHendel() {
+    document.getElementById("hendel").setAttribute("animation-mixer", "timeScale:0")
+}

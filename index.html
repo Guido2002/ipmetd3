@@ -12,7 +12,6 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cig.js"></script>
-    <script src="/js/door.js"></script>
     <script src="/js/teleport.js"></script>
     <script src="/js/beer.js"></script>
     <title>Bunker Festival</title>
@@ -53,7 +52,7 @@
 
         <a-entity gltf-model="#box" position="0 0 0"></a-entity>
         <a-entity door gltf-model="#door1" class="x" id="door2_t" position="0 0 2.9" rotation="0 0 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
-        <a-entity door gltf-model="#machine" sound="src: #2; autoplay: true; loop: true; volume: 0.08;" position="0 0 -3" rotation="0 0 0" >
+        <a-entity door id="hendel" gltf-model="#machine" sound="src: #2; autoplay: true; loop: true; volume: 0.08;" position="0 0 -3" rotation="0 0 0" animation-mixer="timeScale:0">
         </a-entity>
         <a-entity position="1 3 1" light="type: point; intensity:0.5" color="white"></a-entity>
         <a-entity position="-1 3 1" light="type: point; intensity:0.5" color="white"></a-entity>
@@ -68,16 +67,13 @@
 
         <a-plane beer="n:1" position="-0.5 1 -2.57" id="beer1" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click"  onclick="setTitle(1)" ></a-plane>
         <a-plane beer="n:2" position="-0.3 1 -2.57" id="beer2" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(2)"></a-plane>
-        <a-plane beer="n:3" position="-0.1 1 -2.57" id="beer3" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(3)"></a-plane>
+        <a-plane beer="n:9" position="-0.1 1 -2.57" id="beer3" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(9)"></a-plane>
         <a-plane beer="n:4" position="0.1 1 -2.57" id="beer4" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(4)"></a-plane>
 
-        <a-plane beer="n:5" position="-0.5 0.7 -2.57" id="beer5" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(5)"></a-plane>
+        <a-plane beer="n:10" position="-0.5 0.7 -2.57" id="beer5" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(10)"></a-plane>
         <a-plane beer="n:6" position="-0.3 0.7 -2.57" id="beer6" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(6)"></a-plane>
         <a-plane beer="n:7" position="-0.1 0.7 -2.57" id="beer7" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(7)"></a-plane>
         <a-plane beer="n:8" position="0.1 0.7 -2.57" id="beer8" rotation="0 0 0" width="0.1" height="0.2" class="x" sound="src: #sound2; on: click" onclick="setTitle(8)" ></a-plane>
-
-
-
     </a-scene>
 
 </body>
