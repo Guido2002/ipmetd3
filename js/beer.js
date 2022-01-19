@@ -13,12 +13,12 @@ AFRAME.registerComponent('beer', {
         .then(response => response.json())
         .then(data => {
             el.setAttribute("src", data[0].image_url)
-            console.log(data[0].image_url)
+            beerName = data[0].name
+            console.log(beerName)
         })
         .catch((error) => {
             console.error('Error:', error);
         })
-        
     },
     update: function () {},
     tick: function () {},
