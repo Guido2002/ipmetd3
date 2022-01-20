@@ -104,3 +104,9 @@ function setVisibleNone() {
 
 }
 
+function closeUitleg() {
+    const uitleg = document.getElementById("js--uitleg")
+    
+    uitleg.parentNode.removeChild(uitleg);
+}
+

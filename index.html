@@ -61,6 +61,29 @@
 
         <a-entity light="type:ambient; intensity: 0.3"></a-entity>
         
+        <!-- uitleg over bewegen door tunnels -->
+        <a-entity
+                geometry="primitive: plane; height: 0.5; width: 1;"
+                material="color: #fff; opacity: 0.3;" 
+                position="0 1.5 -0.8" 
+                id="js--uitleg">
+                <a-entity text="
+                    value: Beweeg je cursor naar de rode vlakken op de grond om je door de gangen te verplaatsen;
+                    color: #fff;
+                    align: center;" position="0 0.1 0">
+                </a-entity>
+                <a-entity
+                    geometry="primitive: plane; height: 0.1; width: 0.4"
+                    material="color: #000;" 
+                    position="0 -0.1 0.01"
+                    class="x" onclick="closeUitleg()">
+                    <a-entity text="
+                        value: Ik snap het;
+                        color: #fff;
+                        align: center;">
+                    </a-entity>
+                </a-entity>
+        </a-entity>
 
 
         <!-- <a-entity light="type: point; color: #BBB; intensity: 0.1"></a-entity> -->
