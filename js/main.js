@@ -87,3 +87,15 @@ function setVisibleNone() {
 
 }
 
+function changeVid(vid1) {
+    vid = document.getElementById("video2")
+    audio = document.getElementById("normal1990")
+    audiovid = document.getElementById("drug2");
+
+    audiovid.setAttribute("sound", "volume: 0;")
+    vid.setAttribute("src", "../video/mk_"+ vid1 +".mp4")
+    audio.setAttribute("src", "/audio/normal_mk_" + vid1 + ".wav")
+    vid.currentTime = 0
+    audio.play()
+}
+

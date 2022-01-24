@@ -26,18 +26,25 @@
             <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
             <a-asset-item id="pil" src="glb_models/pil.glb"></a-asset-item>
             <img src="/textures/album1.jpg" id="album" alt="poster van alle albums van dire straits">
-            <img src="/textures/poster_dire.jpg" id="poster1" alt="poster van dire straits">
+            <img src="/textures/mk_1979.jpg" id="poster1" alt="poster van dire straits">
             <img src="/textures/mk_1980.jpg" id="poster2" alt="poster van dire straits">
             <img src="/textures/mk_1992.jpg" id="poster3" alt="poster van dire straits">
+            <img src="/textures/mk_1990.jpg" id="poster4" alt="poster van dire straits">
             <img src="/textures/posterwall.png" id="posterwall" alt="postermuur dire straits">
             <img src="/textures/doorwall_1.png" id="doorwall1" alt="postermuur dire straits">
             <img src="/textures/doorwall_2.png" id="doorwall2" alt="postermuur dire straits">
             <img src="/textures/doorwall_3.png" id="doorwall3" alt="postermuur dire straits">
             <img src="/textures/videowall.png" id="videowall" alt="postermuur dire straits">
             <img src="/textures/strat.png" id="strat" alt="">
-            <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/test_2.mp4"></video>
-            <audio src="/audio/normal_video2.wav" id="normal2" preload=auto ></audio>
-            <audio src="/audio/drug_video2.wav" id="drug3" preload=auto></audio>
+            <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/mk_1990.mp4"></video>
+            <audio src="/audio/normal_mk_1990.wav" id="normal1990" preload=auto ></audio>
+            <audio src="/audio/drug_mk_1990.wav" id="drug1990" preload=auto></audio>
+            <audio src="/audio/normal_mk_1980.wav" id="normal1980" preload=auto ></audio>
+            <audio src="/audio/drug_mk_1980.wav" id="drug1980"  preload=auto></audio>
+            <audio src="/audio/normal_mk_1979.wav" id="normal1979"  preload=auto ></audio>
+            <audio src="/audio/drug_mk_1979.wav" id="drug1979"preload=auto></audio>
+            <audio src="/audio/normal_mk_1992.wav" id="normal1992" preload=auto ></audio>
+            <audio src="/audio/drug_mk_1992.wav" id="drug1992"  preload=auto></audio>
         </a-assets>
 
         <a-camera id="js--camera" position="-16 1.5 14">
@@ -60,7 +67,7 @@
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
 
         <a-video src="#video2" id="vid2" width= "6" height="3" position="-16 2 17.9" rotation="0 180 0">
-            <a-entity id="drug2" position="0 0 3.5" sound="src: #normal2; loop: true; autoplay:true; maxDistance: 1;"></a-entity>
+            <a-entity id="drug2" position="0 0 3.5" sound="src: #normal1990; loop: true; autoplay:true; maxDistance: 1;"></a-entity>
             <a-entity gltf-model="#tafel" position="0.6 -2 2.5">
                 <a-entity gltf-model="#pil" position="-0.7 1 0.2" class="x drug-object" onclick="setDrugEffect()">
                 
@@ -73,8 +80,8 @@
         <a-entity gltf-model="#speaker" position="-19 0 17.5" scale="0.8 0.8 0.8" rotation="0 85 0"></a-entity>
         <a-entity gltf-model="#speaker" position="-13 0 17.5" scale="0.8 0.8 0.8" rotation="0 95 0"></a-entity>
         <a-entity gltf-model="#lights" position="-16 3.9 17.3" scale="0.5 0.5 0.5" rotation="0 -90 20"></a-entity>
-        <a-plane src="#poster1" position="-19.9 2 16" width="2" height="1.5"  rotation="0 90 0">
-            <a-entity scale="4 4 4"  text="value:1977; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
+        <a-plane src="#poster1" class="x" position="-19.9 2 17" width="2" height="1.5"  rotation="0 90 0" onclick="changeVid('1979')">
+            <a-entity scale="4 4 4"  text="value:1979; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
         </a-plane>
 
         <!-- <a-plane src="#album" position="-12.1 2 14" width="2.9" height="3.9"  rotation="0 -90 0"></a-plane> -->
@@ -86,10 +93,15 @@
 
         <a-plane src="#videowall" position="-16 2 17.99" width="8" height="4" rotation="0 180 0"></a-plane>
 
-        <a-image src="#poster2" position="-19.9 2 14" width="2" height="1.5"  rotation="0 90 0">
-            <a-entity scale="4 4 4" text="value:1982; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
+        <a-image src="#poster2" class="x" position="-19.9 2 15" width="2" height="1.5" rotation="0 90 0" onclick="changeVid('1980')">
+            <a-entity scale="4 4 4" text="value:1980; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
         </a-image>
-        <a-image src="#poster3" position="-19.9 2 12" width="2" height="1.5"  rotation="0 90 0">
+
+        <a-image src="#poster4"  class="x" position="-19.9 2 13" width="2" height="1.5"  rotation="0 90 0" onclick="changeVid('1990')">
+            <a-entity scale="4 4 4"  text="value:1990; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
+        </a-image>
+
+        <a-image src="#poster3" class="x" position="-19.9 2 11" width="2" height="1.5"  rotation="0 90 0" onclick="changeVid('1992')">
             <a-entity scale="4 4 4"  text="value:1992; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/anton/Anton-Regular.json;" position="1.8 0.8 0"></a-entity>
         </a-image>
 
