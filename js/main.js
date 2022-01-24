@@ -59,33 +59,15 @@ function playVideo_Audio(num1, num2, num3, num4) {
     vid4.components.material.material.map.image.play();
 }
 
-function setMuted (currentVid, anotherVid, anotherVid2, anotherVid3) {
-    currentVideo = document.getElementById("drug" + currentVid);
-    anotherVideo = document.getElementById("drug" + anotherVid);
-    anotherVideo2 = document.getElementById("drug" + anotherVid2);
-    anotherVideo3 = document.getElementById("drug" + anotherVid3);
-
-    currentVideo.setAttribute("sound", "volume: 1;")
-    anotherVideo.setAttribute("sound", "volume: 0;")
-    anotherVideo2.setAttribute("sound", "volume: 0;")
-    anotherVideo3.setAttribute("sound", "volume: 0;")
-
-
-
+function setMuted (currentVid) {
+    currentVideo = document.getElementById("so" + currentVid);
+    currentVideo.setAttribute("sound", "volume: 0;")
 }
 
-function setVolumeNormal (currentVid, anotherVid, anotherVid2, anotherVid3)  {
-    currentVideo = document.getElementById("drug" + currentVid);
-    anotherVideo = document.getElementById("drug" + anotherVid);
-    anotherVideo2 = document.getElementById("drug" + anotherVid2);
-    anotherVideo3 = document.getElementById("drug" + anotherVid3);
+function setVolumeNormal (currentVid)  {
+    currentVideo = document.getElementById("so" + currentVid);
 
-    currentVideo.setAttribute("sound", "volume: 1;")
-    anotherVideo.setAttribute("sound", "volume: 1;")
-    anotherVideo2.setAttribute("sound", "volume: 1;")
-    anotherVideo3.setAttribute("sound", "volume: 1;")
-
-
+    currentVideo.setAttribute("sound", "volume: 0.1;");
 }
 
 function setVisibleNone() {

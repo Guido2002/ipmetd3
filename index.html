@@ -44,7 +44,7 @@
             
         </a-assets>
 
-        <a-camera id="js--camera" position="0 1.5 0">
+        <a-camera id="js--camera" position="0 1.6 0">
                 <a-entity
                     animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                     animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 300; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -60,12 +60,12 @@
         <a-entity  light="type: ambient; intensity: 0.3"></a-entity>
 
         <a-entity gltf-model="#box" position="0 0 0"></a-entity>
-        <a-entity door gltf-model="#door1" class="x" id="door2_t" position="0 0 2.9" rotation="0 0 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
-        <a-entity door id="hendel" gltf-model="#machine" class="x" sound="src: #sound1; loop: true; volume: 0.08;" position="0 0 -3" rotation="0 0 0" animation-mixer="timeScale:0">
+        <a-entity door gltf-model="#door1" id="door2_t" position="0 0 2.9" rotation="0 0 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
+        <a-entity door id="hendel" gltf-model="#machine" position="0 0 -3" rotation="0 0 0" animation-mixer="timeScale:0">
         </a-entity>
 
         <a-text position="-0.52 2 -3"  value="DEG BIER" width="3"></a-text>
-        <a-text position="-0.6 0.2 -2.55" id="title" value="DEG BIER" width="2"></a-text>
+        <a-text position="-0.6 1.3 -2.55" id="title" value="DEG BIER" width="2"></a-text>
 
         <a-plane src="#poster" position="-1.9 2 -2.9" width="1.8" height="1" ></a-plane>
         <a-plane src="#poster" position="1.9 2 -2.9" width="1.8" height="1" ></a-plane>
@@ -94,6 +94,10 @@
             </a-entity>
         </a-entity>
         <a-entity gltf-model="#tafel" position="2.5 -0.2 1.2" rotation="0 0 0" scale="0.5 1 0.9"></a-entity>
+
+        <a-plane  class="x platform" id="so1"  position="0 0.1 -1.7" color=white rotation="270 180 0" sound="src: #sound1; loop: true; volume: 0.01; on:click;" onclick="setVolumeNormal(1)"></a-plane>
+        <a-plane  class="x platform" id="so2"  position="2.25 0.1 0" color=white rotation="270 180 0" onclick="setMuted(1)"></a-plane>
+        <a-plane  class="x platform" id="so3"  position="-2.25 0.1 0" color=white rotation="270 180 0" onclick="setMuted(1)"></a-plane>
 
         <a-plane src="#posterwall_1" position="-2.99 1.5 0" width="6" height="3" rotation="0 90 0" ></a-plane>
         <a-entity gltf-model="#tafel" position="-2 -0.2 -1.2" rotation="0 0 0" scale="0.5 1 0.9"></a-entity>
