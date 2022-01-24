@@ -37,7 +37,7 @@
             <img src="/textures/videowall.png" id="videowall" alt="postermuur dire straits">
             <img src="/textures/strat.png" id="strat" alt="">
             <video id="video2" playsinline webkit-playsinline preload=auto loop="true" autoplay src="video/mk_1990.mp4"></video>
-            <audio src="/audio/normal_mk_1990.wav" id="normal1990" preload=auto loop="true" ></audio>
+            <audio src="/audio/normal_mk_1990.wav" id="normal1990" autoplay preload=auto loop="true" ></audio>
             <audio src="/audio/drug_mk_1990.wav" id="drug1990" preload=auto loop="true"></audio>
             <audio src="/audio/normal_mk_1980.wav" id="normal1980" preload=auto loop="true" ></audio>
             <audio src="/audio/drug_mk_1980.wav" id="drug1980"  preload=auto loop="true"></audio>
@@ -67,9 +67,8 @@
         <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
 
         <a-video src="#video2" id="vid2" width= "6" height="3" position="-16 2 17.9" rotation="0 180 0">
-            <a-entity id="drug2" position="0 0 3.5" sound="src: #normal1990; loop: true; autoplay:true; maxDistance: 1;"></a-entity>
             <a-entity gltf-model="#tafel" position="0.6 -2 2.5">
-                <a-entity gltf-model="#pil" position="-0.7 1 0.2" class="x drug-object" onclick="setDrugEffect()">
+                <a-entity gltf-model="#pil" position="-0.7 1 0.2" class="x" id="drug_physiqal" onclick="setDrugEffect('1990')">
                 
                 </a-entity>
             </a-entity>

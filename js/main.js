@@ -90,12 +90,28 @@ function setVisibleNone() {
 function changeVid(vid1) {
     vid = document.getElementById("video2")
     audio = document.getElementById("normal1990")
+    drug_physiqal = document.getElementById("drug_physiqal")
     audiovid = document.getElementById("drug2");
 
-    audiovid.setAttribute("sound", "volume: 0;")
+    drug_physiqal.setAttribute('onclick', 'setDrugEffect('+ vid1 + ')')
+    drug_physiqal.setAttribute("position", "-0.7 1 0.2");
+
     vid.setAttribute("src", "../video/mk_"+ vid1 +".mp4")
     audio.setAttribute("src", "/audio/normal_mk_" + vid1 + ".wav")
     vid.currentTime = 0
     audio.play()
 }
 
+function setDrugEffect(number) {
+    const drug_physiqal = document.getElementById("drug_physiqal")
+    const vid2 = document.getElementById("video2");
+    audio = document.getElementById("normal1990")
+
+    console.log(audio)
+    audio.setAttribute("src", "/audio/drug_mk_" + number + ".wav")
+    console.log(audio)
+   vid2.currentTime = 0;
+   audio.play()
+
+    drug_physiqal.setAttribute("position", "100 100 100");
+   }
