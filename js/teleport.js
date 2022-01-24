@@ -1,11 +1,10 @@
 window.onload = () =>{
     const places = document.getElementsByClassName('platform');
     const camera = document.getElementById('js--camera');
+    
 
     pickups = document.getElementsByClassName("js--pickup")
     let hold = null;
-
-
 
   for (let j = 0; j < pickups.length; j++) {
     pickups[j].addEventListener('click', function(evt){

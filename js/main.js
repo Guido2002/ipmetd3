@@ -47,11 +47,11 @@ function playVideo_Audio(num1, num2, num3, num4) {
     audio2 = document.getElementById("drug" + num2);
     audio3 = document.getElementById("drug" + num3);
     audio4 = document.getElementById("drug" + num4);
-    
-    audio1.setAttribute("sound", "volume: 1; autoplay: true;")
-    audio2.setAttribute("sound", "volume: 1; autoplay: true;")
-    audio3.setAttribute("sound", "volume: 1; autoplay: true;")
-    audio4.setAttribute("sound", "volume: 1; autoplay: true;")
+
+    audio1.components.sound.playSound()
+    audio2.components.sound.playSound()
+    audio3.components.sound.playSound()
+    audio4.components.sound.playSound()
 
     vid1.components.material.material.map.image.play();
     vid2.components.material.material.map.image.play();
@@ -100,6 +100,7 @@ function setVisibleNone() {
     const test = document.getElementById("door2_t")
 
     test.parentElement.removeChild(test);
+    playVideo_Audio(1,2,3,4)
 
 }
 
