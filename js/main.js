@@ -98,10 +98,7 @@ function lightOn(){
 
 function setVisibleNone() {
     const test = document.getElementById("door2_t")
-
     test.parentElement.removeChild(test);
-    playVideo_Audio(1,2,3,4)
-
 }
 
 function closeUitleg() {
