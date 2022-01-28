@@ -60,6 +60,29 @@
         </a-camera>
         <a-entity  light="type: ambient; intensity: 0.3"></a-entity>
 
+        <a-entity
+                geometry="primitive: plane; height: 0.5; width: 1;"
+                material="color: black; opacity: 0.9;" 
+                position="0 1.5 -0.5" 
+                id="js--uitleg">
+                <a-entity text="
+                    value: Welkom in de Cafetaria!;
+                    color: #fff;
+                    align: center;" position="0 0.1 0">
+                </a-entity>
+                <a-entity
+                    geometry="primitive: plane; height: 0.1; width: 0.4"
+                    material="color: #000;" 
+                    position="0 -0.1 0.01"
+                    class="x" onclick="closeUitleg();playVideo_Audio(1,2,3,4);">
+                    <a-entity text="
+                        value: Ga verder;
+                        color: #fff;
+                        align: center;">
+                    </a-entity>
+                </a-entity>
+        </a-entity>
+
         <a-entity gltf-model="#box" position="0 0 0"></a-entity>
         <a-entity gltf-model="#arcade" class="x" id="jukebox" onclick="setJukebox()" position="2.5 0 2.5" scale="0.7 0.7 0.7" rotation="0 -140 0" sound="src: #juke1; autoplay: true; loop: true; volume: 1;"></a-entity>
         <a-entity door gltf-model="#door1" id="door2_t" position="0 0 2.9" rotation="0 0 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
