@@ -115,3 +115,8 @@ function setDrugEffect(number) {
 
     drug_physiqal.setAttribute("position", "100 100 100");
    }
+
+function closeUitleg() {
+    const uitleg = document.getElementById("js--uitleg")
+    uitleg.parentNode.removeChild(uitleg);
+}
