@@ -3,17 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-area-light-component/dist/aframe-area-light-component.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/cig.js"></script>
+    <script src="/js/door.js"></script>
+    <script src="/js/teleport.js"></script>
+    <script src="/js/beer.js"></script>
+    <title>Bunker Festival</title>
 </head>
 <body>
-    <p>Hallo Guido</p>
+    <a-scene fog="type: linear; color:  #121212 ; far: 30; near: 0">
+        <a-assets>
+            <a-asset-item id="tunnel" src="glb_models/maze.glb"></a-asset-item>
+            <a-asset-item id="fakkel" src="glb_models/fakkel.glb"></a-asset-item>
+            <a-asset-item id="cig" src="glb_models/cig.glb"></a-asset-item>
+            <a-asset-item id="asbak" src="glb_models/asbak.glb"></a-asset-item>
+            <a-asset-item id="pil" src="glb_models/pil.glb"></a-asset-item>
+            <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
+            <a-asset-item id="door1" src="glb_models/door1.glb"></a-asset-item>
+            <a-asset-item id="door2" src="glb_models/door2.glb"></a-asset-item>
+            <a-asset-item id="lights" src="glb_models/lights.glb"></a-asset-item>
+            <a-asset-item id="speaker" src="glb_models/speaker.glb"></a-asset-item>
+            <video id="video1" playsinline webkit-playsinline autoplay  loop="true" src="video/test.mp4"></video>
+            <video id="video2" playsinline webkit-playsinline autoplay loop="true" src="video/test_2.mp4"></video>
+            <video id="video3" playsinline webkit-playsinline autoplay loop="true" src="video/test3.mp4"></video>
+            <video id="video4" playsinline webkit-playsinline autoplay loop="true" src="video/test4.mp4"></video>
+            <img id="poster" src="textures/poster.jpg">
+            <!-- <img id="poster2" src="textures/poster2.jpg"> -->
+            <audio src="/audio/drug_video1.wav" preload=auto ></audio>
+            <audio src="/audio/drug_video2.wav" preload=auto ></audio>
+            <audio src="/audio/normal_video1.wav" id="normal1" preload=auto></audio>
+            <audio src="/audio/normal_video2.wav" id="normal2" preload=auto></audio>
+            <audio src="/audio/normal_video3.wav" id="normal3" preload=auto></audio>
+            <audio src="/audio/normal_video4.wav" id="normal4" preload=auto></audio>
+        </a-assets>
 
-    <p>Bananensplit</p>
+        <a-camera id="js--camera" position="0 1.5 0">
+                <a-entity
+                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 300; from: 1 1 1; to: 0.1 0.1 0.1"
+                    animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 200; to: 1 1 1"
+                    cursor = "fuse: true; fuseTimeout: 300"
+                    material = "color: white; shader: flat"
+                    geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+                    position = "0 0 -0.5"
+                    raycaster="far: 8 interval: 300; objects: .x, .door"
+                >
+                </a-entity>
+            <a-entity id="zaklamp" light="type: spot; shadowCast: true; intensity: 0.6; angle:45; decay:0.5; distance:8;"></a-entity>
+        </a-camera>
 
-    <p>ArieBombarie</p>
+        <a-entity light="type:ambient; intensity: 0.3"></a-entity>
+        
+        <!-- uitleg over bewegen door tunnels -->
+        <a-entity
+                geometry="primitive: plane; height: 0.5; width: 1;"
+                material="color: #fff; opacity: 0.3;" 
+                position="0 1.5 -0.8" 
+                id="js--uitleg">
+                <a-entity text="
+                    value: Beweeg je cursor naar de rode vlakken op de grond om je door de gangen te verplaatsen;
+                    color: #fff;
+                    align: center;" position="0 0.1 0">
+                </a-entity>
+                <a-entity
+                    geometry="primitive: plane; height: 0.1; width: 0.4"
+                    material="color: #000;" 
+                    position="0 -0.1 0.01"
+                    class="x" onclick="closeUitleg();playVideo_Audio(1,2,3,4);">
+                    <a-entity text="
+                        value: Ik snap het;
+                        color: #fff;
+                        align: center;">
+                    </a-entity>
+                </a-entity>
+        </a-entity>
 
-    <p>zit dit alleen in de slaaf?</p>
+
+        <!-- <a-entity light="type: point; color: #BBB; intensity: 0.1"></a-entity> -->
+        <a-plane src="#poster" position="-1.5 1.5 -1.99" width="0.5" height="1"></a-plane>
+        <a-plane src="#poster" position="1.5 1.5 -1.99" width="0.5" height="1"></a-plane>
+
+        <a-entity gltf-model="#tunnel" position="0 0 0"></a-entity>
+        
+
+        <a-video src="#video1" id="vid1" width= "6" height="3" position="12 2 21.9" rotation="0 180 0">
+            <a-entity class="drug" id="drug1" position="0 0 3.5" sound="src: #normal1; loop: true; maxDistance: 1;"></a-entity>
+            <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:6; height:0.1; color: red;"></a-entity>
+        </a-video>
+
+        <!-- speakers & lights vid1 -->
+        <a-entity gltf-model="#speaker" position="9 0 21.5" scale="0.8 0.8 0.8" rotation="0 85 0"></a-entity>
+        <a-entity gltf-model="#speaker" position="15 0 21.5" scale="0.8 0.8 0.8" rotation="0 95 0"></a-entity>
+        <a-entity gltf-model="#lights" position="12 3.9 21.3" scale="0.5 0.5 0.5" rotation="0 -90 20"></a-entity>
+
+        <a-plane  class="x platform" id="so1" position="12 0.2 18" color=red rotation="270 180 0" onclick="setMuted(1,2,3,4)"></a-plane>
+
+
+        <a-video src="#video2" id="vid2" width= "6" height="3" position="-16 2 17.9" rotation="0 180 0">
+            <a-entity class="drug" id="drug2" position="0 0 3.5" sound="src: #normal2; loop: true; maxDistance: 1;"></a-entity>
+            <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:6; height:0.1; color: green;"></a-entity>
+        </a-video>
+
+        <!-- speakers & lights vid2 -->
+        <a-entity gltf-model="#speaker" position="-19 0 17.5" scale="0.8 0.8 0.8" rotation="0 85 0"></a-entity>
+        <a-entity gltf-model="#speaker" position="-13 0 17.5" scale="0.8 0.8 0.8" rotation="0 95 0"></a-entity>
+        <a-entity gltf-model="#lights" position="-16 3.9 17.3" scale="0.5 0.5 0.5" rotation="0 -90 20"></a-entity>
+
+        <a-plane  class="x platform" id="so2"  position="-16 0.2 14" color=red rotation="270 180 0" onclick="setMuted(2,1,3,4)"></a-plane>
+
+
+        <a-video src="#video3" id="vid3" width= "6" height="3" position="9 2 -26.9" rotation="0 0 0">
+            <a-entity class="drug" id="drug3" position="0 0 3.5" sound="src: #normal3; loop: true; maxDistance: 1;"></a-entity>
+            <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:6; height:0.1; color: yellow;"></a-entity>
+        </a-video>
+
+        <!-- speakers & lights vid3 -->
+        <a-entity gltf-model="#speaker" position="6 0 -26.5" scale="0.8 0.8 0.8" rotation="0 -85 0"></a-entity>
+        <a-entity gltf-model="#speaker" position="12 0 -26.5" scale="0.8 0.8 0.8" rotation="0 -95 0"></a-entity>
+        <a-entity gltf-model="#lights" position="9 3.9 -26.3" scale="0.5 0.5 0.5" rotation="0 90 20"></a-entity>
+
+        <a-plane  class="x platform" id="so3"  position="9 0.2 -23" color=red rotation="270 180 0" onclick="setMuted(3,4,2,1)"></a-plane>
+
+
+        <a-video src="#video4" id="vid4" width= "6" height="3" position="-8.1 2 -16" rotation="0 270 0">
+            <a-entity class="drug" id="drug4" position="0 0 3.5" sound="src: #normal4; loop: true; maxDistance: 1;"></a-entity>
+            <a-entity  position="3 1.9 0.5"  rotation="270 180 0" area-light="intensity:30; width:6; height:0.1; color: blue;"></a-entity>
+        </a-video>
+
+        <!-- speakers & lights vid4 -->
+        <a-entity gltf-model="#speaker" position="-8.5 0 -13" scale="0.8 0.8 0.8" rotation="0 175 0"></a-entity>
+        <a-entity gltf-model="#speaker" position="-8.5 0 -19" scale="0.8 0.8 0.8" rotation="0 185 0"></a-entity>
+        <a-entity gltf-model="#lights" position="-8.8 3.9 -16" scale="0.5 0.5 0.5" rotation="0 0 20"></a-entity>
+
+        <a-plane  class="x platform" id="so4"  position="-12 0.2 -16" color=red rotation="270 180 0" onclick="setMuted(4,3,2,1)"></a-plane>
+
+        <!-- <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="-1 1.5 -4"  shader="flat"></a-entity>
+        <a-sphere position="-0.885 1.9 -4.04" radius="0.04" color="orange"></a-sphere>
+        <a-entity light="type:point; intensity: 0.3; color: orange" position="0.885 1.9 -4.04" rotation="-90 0 0"></a-entity> -->
+
+        <!-- <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="-1 1.5 -4"  shader="flat" onmouseleave="toggleLight(2,2)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="-1 1.5 -8"  shader="flat" onmouseleave="toggleLight(3,3)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="-1 1.5 -11"  shader="flat" onmouseleave="toggleLight(3,3)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="5.5 1.5 1" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(4,4)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="12 1.5 1" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(5,5)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="17 1.5 5" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(4,4)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="17 1.5 10"  shader="flat" onmouseleave="toggleLight(3,3)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="11 1.5 12"  shader="flat" onmouseleave="setVolumeNormal(2,1)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="14 1.5 12" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(3,3)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="14 1.5 5" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(5,5)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="5.5 1.5 -8" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(4,4)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_2"  position="9 1.5 -8" rotation="0 90 0"  shader="flat" onmouseleave="toggleLight(5,5)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="12 1.5 -2"  shader="flat" onmouseleave="toggleLight(6,6)"></a-entity>
+        <a-entity gltf-model="#fakkel" class="x fakkel_1"  position="12 1.5 -8"  shader="flat" onmouseleave="toggleLight(7,7)"></a-entity> -->
+
+        <a-entity door gltf-model="#door2" class="x" id="door2_t" position="0 0 -2" rotation="0 180 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
+        
+
+    <!-- teleporteer spots 1t/m5 -->
+        <a-plane  class="x platform" position="0 0.01 0" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="0 0.01 -4.5" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVisibleNone()"></a-plane>
+        <a-plane  class="x platform" position="0 0.01 -9" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="0 0.01 -16" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="0 0.01 -23" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+    <!-- teleporteer spots 6t/m10 -->
+        <a-plane  class="x platform" position="4 0.01 -23" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+        <a-plane  class="x platform" position="9 0.01 -18" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+        <a-plane  class="x platform" position="9 0.01 -13" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="9 0.01 -9" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="13 0.01 -9" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+    <!-- teleporteer spots 11t/m15 -->
+        <a-plane  class="x platform" position="13 0.01 -4.5" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="13 0.01 0" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="7 0.01 0" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVisibleNone()"></a-plane>
+        <a-plane  class="x platform" position="13 0.01 4" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="18 0.01 4" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+    <!-- teleporteer spots 16t/m20 -->
+        <a-plane  class="x platform" position="18 0.01 11" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="12 0.01 11" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+        <a-plane  class="x platform" position="6 0.01 11" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="6 0.01 6" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-4 0.01 6" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+    <!-- teleporteer spots 21t/m25 -->
+        <a-plane  class="x platform" position="-4 0.01 0" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVisibleNone()"></a-plane>
+        <a-plane  class="x platform" position="-3 0.01 11" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-3 0.01 14" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-11 0.01 14" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+        <a-plane  class="x platform" position="-16 0.01 9" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+    <!-- teleporteer spots 26t/m30 -->
+        <a-plane  class="x platform" position="-16 0.01 4.5" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-16 0.01 0" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-12 0.01 0" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-12 0.01 -3" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+        <a-plane  class="x platform" position="-6 0.01 -3" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+
+    <!-- teleporteer spots 31t/m34 -->
+        <a-plane  class="x platform" position="-6 0.01 -9" color=red rotation="-90 0" width="0.8" height="0.8" ></a-plane>
+        <a-plane  class="x platform" position="-12 0.01 -11" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+        <a-plane  class="x platform" position="-12 0.01 -23" color=red rotation="-90 0" width="0.8" height="0.8" onclick="setVolumeNormal(1,2,3,4)"></a-plane>
+        <a-plane  class="x platform" position="-6 0.01 -23" color=red rotation="-90 0" width="0.8" height="0.8"></a-plane>
+
+    </a-scene>
 
     <p>tada?</p>
 
