@@ -113,3 +113,10 @@ function startHendel(){
 function stopHendel() {
     document.getElementById("hendel").setAttribute("animation-mixer", "timeScale:0")
 }
+
+function closeUitleg() {
+    const uitleg = document.getElementById("js--uitleg")
+    const jukebox = document.getElementById("jukebox")
+    uitleg.parentNode.removeChild(uitleg);
+    jukebox.components.sound.playSound()
+}
