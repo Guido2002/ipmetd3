@@ -25,7 +25,7 @@
             <a-asset-item id="fakkel" src="glb_models/fakkel.glb"></a-asset-item>
             <a-asset-item id="cig" src="glb_models/cig.glb"></a-asset-item>
             <a-asset-item id="asbak" src="glb_models/asbak.glb"></a-asset-item>
-            <a-asset-item id="arcade" src="glb_models/arcade.glb"></a-asset-item>
+            <a-asset-item id="arcade" src="glb_models/jukebox.glb"></a-asset-item>
             <a-asset-item id="pil" src="glb_models/pil.glb"></a-asset-item>
             <a-asset-item id="tafel" src="glb_models/tafel.glb"></a-asset-item>
             <a-asset-item id="door1" src="glb_models/door1.glb"></a-asset-item>
@@ -84,7 +84,7 @@
         </a-entity>
 
         <a-entity gltf-model="#box" position="0 0 0"></a-entity>
-        <a-entity gltf-model="#arcade" class="x" id="jukebox" onclick="setJukebox()" position="2.5 0 2.5" scale="0.7 0.7 0.7" rotation="0 -140 0" sound="src: #juke1; volume: 1;"></a-entity>
+        <a-entity gltf-model="#jukebox" class="x" id="jukebox" onclick="setJukebox()" position="2.5 0 2.5" scale="0.7 0.7 0.7" rotation="0 -140 0" sound="src: #juke1; volume: 1;"></a-entity>
         <a-entity door gltf-model="#door1" id="door2_t" position="0 0 2.9" rotation="0 0 0" animation-mixer="timeScale: 0; loop: pingpong"></a-entity>
         <a-entity door id="hendel" gltf-model="#machine" position="0 0 -3" rotation="0 0 0" animation-mixer="timeScale:0">
         </a-entity>
