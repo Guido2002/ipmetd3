@@ -1,4 +1,5 @@
 lighton = [true,true,true];
+let numberjuke = 0
 
 function toggleLight(number, arrayPosition) {
     newArrayPosition = arrayPosition - 1;
@@ -72,9 +73,21 @@ function setVolumeNormal (currentVid)  {
 
 function setVisibleNone() {
     const test = document.getElementById("door2_t")
-
     test.parentElement.removeChild(test);
+}
 
+function setJukebox() {
+    jukebox = document.getElementById("jukebox")
+
+    numberjuke += 1
+
+    if (numberjuke%2 == 0) {
+        jukebox.setAttribute("sound", "volume: 1;")
+    }
+
+    else {
+        jukebox.setAttribute("sound", "volume: 0;")
+    }
 }
 
 function setTitle(number) {
